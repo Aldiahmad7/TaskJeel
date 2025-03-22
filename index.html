@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taskjeel</title>
+    <title>TaskJeel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <header class="sidebar-header">
+    <div class="container">
+        <header>
             <h1>TaskJeel</h1>
         </header>
+        <div class="content">
+            <div class="form-section">
+                <h2>Tambah Tugas</h2>
+                <form id="form-tugas">
+                    <div class="form-grup">
+                        <label for="tugas">Tugas</label>
+                        <input type="text" id="tugas" required placeholder="Masukkan nama tugas">
+                    </div>
 
-        <nav class="sidebar-menu">
-            <ul>
-                <li class="menu-item active">
-                    <span>Semua Tugas</span>
-                </li>
-                <li class="menu-item">
-                    <span>Selesai</span>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+                    <div class="form-grup">
+                        <label for="deskripsi">Deskripsi Tugas</label>
+                        <textarea id="deskripsi" rows="4" placeholder="Masukkan detail tugas"></textarea>
+                    </div>
+
+                    <div class="form-grup">
+                        <label for="deadline">Deadline</label>
+                        <input type="date" id="deadline" required>
+                    </div>
+
+                    <button type="submit" class="btn-tambah">Tambah Tugas</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
