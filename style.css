@@ -90,6 +90,10 @@ input, textarea {
     background-color: #f5f6fa;
 }
 
+input:hover, textarea:hover {
+    border-color: var(--primary-color);
+  }
+
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--primary-color);
@@ -129,3 +133,36 @@ textarea {
 .btn-tambah:active {
     transform: translateY(0);
 }
+
+.tasks-section {
+    width: 65%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f6fa;
+}
+
+.tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.tasks-header h2 {
+    color: #2d3436;
+    font-size: 22px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.tasks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    overflow-y: auto;
+    max-height: calc(100vh - 180px);
+    padding-right: 10px;
+}
+
