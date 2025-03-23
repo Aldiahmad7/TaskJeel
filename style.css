@@ -166,3 +166,83 @@ textarea {
     padding-right: 10px;
 }
 
+.task-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    border-top: 5px solid var(--primary-color);
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.task-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nama-tugas {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.task-body {
+    padding: 20px;
+}
+
+.deskripsi-tugas {
+    font-size: 14px;
+    color: #2d3436;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.deadline-tugas {
+    font-size: 14px;
+    color: #b2bec3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.deadline-label {
+    font-weight: 600;
+}
+
+.deadline-date {
+    color: #2d3436;
+}
+
+.task-actions {
+    display: flex;
+    padding: 15px 20px;
+    gap: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-hapus {
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    transition: all 0.3s ease;
+    color: #ff7675;
+    border: 1px solid transparent;
+}
+
+.btn-hapus:hover {
+    background: #ff7675;
+    color: white;
+    transform: translateY(-1px);
+}
