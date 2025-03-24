@@ -154,7 +154,6 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
 }
 
 .tasks-header h2 {
@@ -163,18 +162,24 @@ textarea {
     font-weight: 600;
     position: relative;
     display: inline-block;
+    margin-top: -10px;
 }
 
 .tasks-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    row-gap: 1px;
     overflow-y: auto;
     max-height: calc(100vh - 180px);
 }
 
 .tasks-container::-webkit-scrollbar {
     display: none;
+}
+
+.no-tasks {
+    margin-top: 20px;
 }
 
 .task-card {
@@ -189,11 +194,12 @@ textarea {
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
+    margin-top: 15px;
     width: 100%;
 }
 
 .task-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
