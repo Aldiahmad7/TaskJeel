@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputDeskripsi = document.getElementById('deskripsi');
     const templateTugas = document.getElementById('tugas-template');
     
-    const STORAGE_KEY = 'daftar-tugas';
-    let daftarTugasArray = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    let daftarTugasArray = [];
     
     renderTugas();
     
@@ -15,15 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         const tugasBaru = {
-            id: Date.now(),
+            id: Date.now(), 
             tugas: inputTugas.value,
             deadline: inputDeadline.value,
             deskripsi: inputDeskripsi.value
         };
         
         daftarTugasArray.push(tugasBaru);
-        simpanKeStorage();
+        
         renderTugas();
+        
         formTugas.reset();
     });
     
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const kartuTugas = document.importNode(templateTugas.content, true).querySelector('.task-card');
             
             kartuTugas.querySelector('.nama-tugas').textContent = tugas.tugas;
-            kartuTugas.querySelector('.deskripsi-tugas').textContent = tugas.deskripsi || 'Tidak ada deskripsi';
+            kartuTugas.querySelector('.deskripsi-tugas').textContent = tugas.deskripsi;
             
             const tanggalDeadline = new Date(tugas.deadline);
             const tanggalFormatted = tanggalDeadline.toLocaleDateString('id-ID', { 
@@ -53,15 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             kartuTugas.querySelector('.btn-hapus').addEventListener('click', function() {
                 daftarTugasArray = daftarTugasArray.filter(item => item.id !== tugas.id);
-                simpanKeStorage();
+                
                 renderTugas();
             });
             
             daftarTugas.appendChild(kartuTugas);
         });
-    }
-    
-    function simpanKeStorage() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(daftarTugasArray));
     }
 });
