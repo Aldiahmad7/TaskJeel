@@ -379,8 +379,9 @@ input:focus, textarea:focus {
         left: 0;
         transition: bottom 0.3s ease;
         z-index: 10;
-        max-height: 80vh;
+        max-height: 100vh;
         overflow-y: auto;
+        padding-bottom: 100px;
     }
 
     .form-section.active {
@@ -439,7 +440,7 @@ input:focus, textarea:focus {
     }
 
     #hamburger-btn.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
+        transform: rotate(-45deg) translate(-6px, 6.5px);
     }
 
     #hamburger-btn.active span:nth-child(2) {
@@ -447,7 +448,7 @@ input:focus, textarea:focus {
     }
 
     #hamburger-btn.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
+        transform: rotate(45deg) translate(-6px, -6.5px);
     }
 }
 
@@ -461,5 +462,9 @@ input:focus, textarea:focus {
     .task-card {
         max-width: 380px;
         justify-self: center;
+    }
+
+    .form-section {
+        padding-bottom: 120px;
     }
 }
