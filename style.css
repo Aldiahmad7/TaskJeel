@@ -219,12 +219,13 @@ input:focus, textarea:focus {
 }
 
 .tasks-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    row-gap: 1px;
+    justify-content: center;
     overflow-y: auto;
     max-height: calc(100vh - 180px);
+    padding: 10px;
 }
 
 .tasks-container::-webkit-scrollbar {
@@ -236,6 +237,8 @@ input:focus, textarea:focus {
 }
 
 .task-card {
+    flex: 0 0 300px;
+    height: 280px;
     background: var(--dark-2);
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -243,12 +246,9 @@ input:focus, textarea:focus {
     transition: all 0.3s ease;
     position: relative;
     border-top: 5px solid var(--ungu);
-    height: 280px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 5px;
-    margin-top: 15px;
-    width: 100%;
+    margin: 0;
 }
 
 .task-card:hover {
@@ -343,4 +343,123 @@ input:focus, textarea:focus {
     background: #c62828;
     color: var(--text-light);
     transform: translateY(-1px);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .tasks-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .tasks-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .form-section {
+        width: 100%;
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        transition: bottom 0.3s ease;
+        z-index: 10;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .form-section.active {
+        bottom: 0;
+    }
+
+    .tasks-section {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .tasks-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task-card {
+        flex: 0 0 250px;
+        height: 250px;
+        width: 100%;
+        justify-self: center;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+    }
+
+    #hamburger-btn {
+        background: linear-gradient(135deg, var(--ungu), #5e35b1);
+        border: none;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    #hamburger-btn span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-light);
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+
+    #hamburger-btn.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    #hamburger-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #hamburger-btn.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tasks-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .task-card {
+        max-width: 380px;
+        justify-self: center;
+    }
 }

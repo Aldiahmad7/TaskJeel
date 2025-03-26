@@ -5,10 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputDeadline = document.getElementById('deadline');
     const inputDeskripsi = document.getElementById('deskripsi');
     const templateTugas = document.getElementById('tugas-template');
+    const formSection = document.getElementById('form-section');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
     
     let daftarTugasArray = [];
     
     renderTugas();
+    
+    hamburgerBtn.addEventListener('click', function() {
+        formSection.classList.toggle('active');
+        hamburgerBtn.classList.toggle('active');
+    });
     
     formTugas.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -25,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
         renderTugas();
         
         formTugas.reset();
+        
+        if (window.innerWidth <= 768) {
+            formSection.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+        }
     });
     
     function renderTugas() {
@@ -60,4 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
             daftarTugas.appendChild(kartuTugas);
         });
     }
+    
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768 && 
+            !formSection.contains(e.target) && 
+            !hamburgerBtn.contains(e.target) && 
+            formSection.classList.contains('active')) {
+            formSection.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+        }
+    });
 });
