@@ -1,6 +1,6 @@
 TaskJeel
 
-TaskJeel merupakan web sederhana yang digunakan untuk manajemen tugas yang dimana user bisa membuat, melihat, dan menghapus daftar tugas. Website ini menggunakan State Sementara, jadi data hanya disimpan di memori Browser.
+TaskJeel merupakan web sederhana responsif yang digunakan untuk manajemen tugas yang dimana user bisa membuat, melihat, dan menghapus daftar tugas. Website ini menggunakan State Sementara, jadi data hanya disimpan di memori Browser.
 
 Fitur:
 1. Tambah Tugas : Untuk menambah tugas dengan memasukkan nama tugas, deskripsi tugas, dan deadline tugas tersebut.
