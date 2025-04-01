@@ -131,11 +131,11 @@ textarea::-webkit-scrollbar {
 input, textarea {
     width: 100%;
     padding: 15px;
-    border: 2px solid var(--dark-3);
+    border: 1px solid var(--dark-1);
     border-radius: 12px;
     font-size: 16px;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    background-color: #2a2a2a;
+    background-color: var(--dark-3);
     color: var(--text-light);
     position: relative;
 }
@@ -148,7 +148,7 @@ input:hover, textarea:hover {
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--ungu);
-    background-color: #1e1e1e;
+    background-color: var(--dark-2);
 }
 
 .btn-tambah {
@@ -342,7 +342,6 @@ input:focus, textarea:focus {
 .btn-hapus:hover {
     background: #c62828;
     color: var(--text-light);
-    transform: translateY(-1px);
 }
 
 .mobile-menu {
